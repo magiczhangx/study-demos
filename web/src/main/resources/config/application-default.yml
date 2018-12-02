@@ -1,0 +1,46 @@
+#If you do not like application.properties as the configuration file name,
+#you can switch to another file name by specifying a
+#spring.config.name environment property.
+#java -jar myproject.jar --spring.config.name=myproject
+#The following example shows how to specify two locations:
+#java -jar myproject.jar --spring.config.location=classpath:/default.properties,classpath:/override.properties
+server:
+  #网络设置
+  port: 80
+  address: localhost
+  #session设置
+  servlet:
+    session:
+      timeout: 30m
+
+spring:
+  thymeleaf:
+    cache: false
+
+example:
+  web:
+    #java -jar web-0.0.1-SNAPSHOT.jar --spring.profiles.active=develop 启动时用于指定profile
+    profileName: develop
+    hostSystem: win10
+    version: 3.0
+    dockerServers:
+      - 192.168.126.201
+      - 192.168.126.202
+      - 192.168.126.203
+
+#actuator监控配置
+info:
+  head: head
+  body: body
+management:
+  endpoints:
+    web:
+      exposure:
+        #加载所有的端点，默认只加载了info、health , 很多服务端敏感信息 请选择性暴露
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    #可以关闭指定的端点
+    shutdown:
+      enabled: false
