@@ -13,7 +13,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "City{" +
+        return "City{   " +
                 "name='" + name + '\'' +
                 ", population=" + population +
                 ", area='" + area + '\'' +
