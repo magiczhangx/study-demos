@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Component
 @ConfigurationProperties(prefix="example.web")
+//注意这里 validated是和 下面的validation(@NotNull , @Max , @Min ...)注解联合使用的
 @Validated
 @Data
 public class ProfileProperties {

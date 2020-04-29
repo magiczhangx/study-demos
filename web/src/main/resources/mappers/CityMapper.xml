@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.web.dao.mappers.CityMapper">
+
+<!--    <typeAlias type="com.example.web.dao.dos.City" alias="City"/>-->
+
+
+    <resultMap id="cityMap" type="com.example.web.dao.dos.City">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+    </resultMap>
+
+
+
+<!--    mybatis这里因为场景简单 ， 为City自动创建了resultMap -->
+    <select id="getCityById" resultType="com.example.web.dao.dos.City">
+        SELECT c.id , c.name FROM city as c WHERE id = #{id}
+    </select>
+
+</mapper>

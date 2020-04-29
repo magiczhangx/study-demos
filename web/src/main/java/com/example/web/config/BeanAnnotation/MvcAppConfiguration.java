@@ -4,6 +4,7 @@ import com.example.web.api.Interceptors.DemoInterceptor;
 import com.example.web.api.vo.HomePageVo;
 import com.example.web.api.vo.ProfileVo;
 import lombok.Data;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +21,12 @@ import javax.validation.constraints.NotNull;
 import java.util.Arrays;
 
 @Configuration
+@MapperScan("com.example.web.dao.mappers")
+//@EnableDubbo(scanBasePackages = "com.example.web.service")
+/*
+ * WebMvcConfigurationSupport 用于支持MVC相关的配置 ， 比如Interceptor，ViewResolver，MessageConverter等
+ * 具体可支持的可参考接口WebMvcConfigurer
+ */
 public class MvcAppConfiguration implements WebMvcConfigurer {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -116,8 +123,9 @@ public class MvcAppConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new DemoInterceptor(1)).order(1).addPathPatterns("/**");
-        registry.addInterceptor(new DemoInterceptor(2)).order(2).addPathPatterns("/**");
+        //加入顺序就是拦截器拦截顺序
+        registry.addInterceptor(new DemoInterceptor(1)).addPathPatterns("/**");
+        registry.addInterceptor(new DemoInterceptor(2)).addPathPatterns("/**");
     }
 
 }

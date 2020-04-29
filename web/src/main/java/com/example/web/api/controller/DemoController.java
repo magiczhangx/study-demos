@@ -5,6 +5,7 @@ import com.example.web.api.vo.ProfileVo;
 import com.example.web.service.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,11 +29,12 @@ public class DemoController {
     @RequestMapping("/home")
     public HomePageVo getHome() {
 
-        myService.doSomething("44");
+        myService.doSomething("18");
         return home;
     }
 
     @RequestMapping("/home2")
+    @GetMapping
     public HomePageVo getHome2() { return home2; }
 
     @RequestMapping("/profile")

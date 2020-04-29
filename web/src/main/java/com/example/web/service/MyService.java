@@ -7,5 +7,5 @@ import javax.validation.constraints.Size;
 @Validated
 public interface MyService {
 
-    void doSomething(@Size(min = 9 , max = 20) String code);
+    void doSomething(/*@Size(min = 9 , max = 20)*/ String code);
 }
