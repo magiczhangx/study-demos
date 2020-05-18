@@ -20,14 +20,14 @@ spring:
   thymeleaf:
     cache: false
   datasource:
-    url: jdbc:mysql://192.168.126.101:3306/mytest?useSSL=false
+    url: jdbc:mysql://192.168.0.160:3306/mytest?useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: accs#123
 
 example:
   web:
     #java -jar web-0.0.1-SNAPSHOT.jar --spring.profiles.active=develop 启动时用于指定profile
-    profileName: develop
+    profileName: developn
     hostSystem: win10
     version: 3.0
     dockerServers:

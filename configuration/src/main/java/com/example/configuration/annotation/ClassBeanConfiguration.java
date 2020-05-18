@@ -15,6 +15,7 @@ public class ClassBeanConfiguration {
 
     @Bean
     public People annotationBeanPeople(){
+        //123
         People p = new People();
         p.setName("annotation bean peter");
         p.setAge(18);
@@ -33,7 +34,7 @@ public class ClassBeanConfiguration {
     @Bean
     public Object springApplicationArgs(ApplicationArguments args){
 
-        /**
+        /*
          * springboot中ApplicationArguments用于捕获启动时应用程序的参数
          * 比如: java -jar myApplication.jar --stage debug
          * --stage 是option参数 , option参数以"--"开始 , 可用containsOption判断

@@ -25,4 +25,13 @@ public class MyServiceImpl implements MyService {
         logger.info("do something... , city:" + chengdu.getName());
 
     }
+
+    public void  doOtherThing(){
+        logger.info("other thing!!!!!!!!!!!!!!!>.........................");
+        logger.info("other thing!!!!!!!!!!!!!!!>.........................");
+        logger.info("other thing!!!!!!!!!!!!!!!>.........................");
+        logger.info("other thing!!!!!!!!!!!!!!!>.........................");
+        logger.info("other thing!!!!!!!!!!!!!!!>.........................");
+        logger.info("other thing!!!!!!!!!!!!!!!>.........................");
+    }
 }
